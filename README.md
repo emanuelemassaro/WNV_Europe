@@ -14,192 +14,130 @@ c Estación Biológica de Doñana, Consejo Superior de Investigaciones Científi
 d Centro de Investigación Biomédica en Red Epidemiología y Salud Pública (CIBERESP), Avda. Monforte de Lemos 3–5, 28029 Madrid, Spain
 
 Corresponding author:
-Wojciech Szewczyk
-📧 Wojciech.SZEWCZYK@ec.europa.eu
+Wojciech Szewczyk — Wojciech.SZEWCZYK@ec.europa.eu
 
-📌 Overview
+Overview
 
-This repository contains all materials needed to reproduce the spatial statistical analyses and figures for the study “Spatial role of land cover on West Nile virus disease in Europe”.
+This repository contains all materials needed to reproduce the spatial statistical analyses and figures for the study Spatial role of land cover on West Nile virus disease in Europe.
 
 The analysis explores the relationship between land cover characteristics and West Nile virus (WNV) incidence across Europe, using spatial econometric models, Geographically Weighted Regression (GWR), and a suite of sensitivity analyses.
 
-The structure of the repository follows principles of scientific reproducibility.
-
-📁 Repository Structure
+Repository Structure
 ├── Codes/
 │   ├── modelsALL.ipynb
 │   └── sensitivity.ipynb
 │
 ├── Data/
-│   ├── input_data/          # All spatial and tabular data used in the analysis
-│   ├── processed_data/      # Aggregated or transformed datasets
-│   └── model_outputs/       # Intermediate results and outputs for figures/tables
+│   ├── input_data/
+│   ├── processed_data/
+│   └── model_outputs/
 │
 └── Figures/
-    ├── Main/                # Figures included in the main manuscript
-    └── Supplementary/       # Figures used in SI, diagnostics, and sensitivity analyses
+    ├── Main/
+    └── Supplementary/
 
-📚 Contents
+Contents
 1. Codes/
-
-This directory contains the Jupyter notebooks used to run the full analysis pipeline.
-
 modelsALL.ipynb
 
-Main analysis for the manuscript
+Main workflow for:
 
-Preprocessing of covariates
+data preparation
 
-Spatial weight matrix construction
+construction of spatial weights
 
 OLS and Moran’s I diagnostics
 
-Geographically Weighted Regression (GWR)
+GWR modelling
 
-Model outputs and generation of figures for the main paper
+generation of figures for the manuscript
 
 sensitivity.ipynb
 
-Sensitivity analyses of:
+Sensitivity analyses:
 
-Distance-band threshold selection (100–200 km)
+distance-band threshold selection
 
-Spatial autocorrelation patterns
+multicollinearity diagnostics (correlation matrix, VIF)
 
-Multicollinearity diagnostics (correlation matrix, VIF)
+robustness checks for covariate selection
 
-Robustness of covariate selection
-
-Figures and tables used in the Supplementary Information
+supplementary figures and tables
 
 2. Data/
 
-Contains all the data needed to reproduce the results.
+Contains all datasets used in the analysis:
 
-Possible subfolders (depending on your structure):
+input_data/: raw spatial and tabular data
 
-input_data/
-Raw spatial layers, land cover information, epidemiological data, and socio-economic variables.
+processed_data/: harmonized NUTS-level inputs
 
-processed_data/
-Harmonized NUTS-level datasets, standardized covariates, and intermediate files created during the analysis.
+model_outputs/: OLS, GWR, and sensitivity results
 
-model_outputs/
-Outputs from OLS, Moran’s I, GWR fits, and sensitivity analyses.
-
-⚠️ Some datasets may not be publicly available due to licensing or confidentiality. When this is the case, placeholders and instructions are provided.
+Note: some datasets may not be openly shared due to licensing restrictions. In such cases, placeholders or instructions are provided.
 
 3. Figures/
 
-All figures generated during the analysis.
+All figures produced by the analysis.
 
-Main/
+Main/: figures included in the manuscript
 
-Figures included in the primary manuscript such as:
+Supplementary/: figures for the SI (diagnostics, sensitivity, heatmaps, etc.)
 
-Maps of WNV incidence
-
-Spatial patterns of land cover
-
-GWR coefficient surfaces
-
-Model diagnostics
-
-Supplementary/
-
-Figures for the SI:
-
-Distance-band sensitivity plots
-
-Correlation heatmaps
-
-VIF and multicollinearity diagnostics
-
-Residual Moran’s I across distance thresholds
-
-⚙️ Reproducibility and Requirements
-Software
+Requirements
 
 Python ≥ 3.9
+Recommended environment: Conda / Mamba
 
-Jupyter Notebook
-
-Recommended environment: conda or mamba
-
-Key Python Libraries
-geopandas  
-pandas  
-numpy  
-matplotlib  
-seaborn  
-libpysal  
-esda  
-mgwr  
-statsmodels  
+Key libraries
+geopandas
+pandas
+numpy
+matplotlib
+seaborn
+libpysal
+esda
+mgwr
+statsmodels
 scikit-learn
 
 
-To install the full environment:
+Install with:
 
 pip install -r requirements.txt
 
-
-(or provide your full list if available)
-
-🚀 Running the Analysis
+Running the Analysis
 
 Clone the repository:
 
-git clone https://github.com/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com/<your-repo>.git
+cd <your-repo>
 
 
-Ensure all datasets are placed in the /Data/ folder as indicated.
+Ensure all data are placed in Data/.
 
-Open and run the notebooks in the /Codes/ directory in the following order:
+Run notebooks from the Codes/ folder:
 
 modelsALL.ipynb
 
 sensitivity.ipynb
 
-Figures will be automatically exported to the /Figures/ directory.
+Figures will be exported automatically to the Figures/ folder.
 
-📄 Citation
+Citation
 
-If you use this code or data, please cite:
-
-Riccetti, N., Fanelli, A., Szewczyk, W.*, Cescatti, A., Ciscar, J.C., Dubois, G., Ibarreta, D., Figuerola, J., & Massaro, E.
+Rizzetti, N., Fanelli, A., Szewczyk, W.*, Cescatti, A., Ciscar, J.C., Dubois, G., Ibarreta, D., Figuerola, J., & Massaro, E.
 Spatial role of land cover on West Nile virus disease in Europe.
 European Commission, Joint Research Centre (JRC), 2024.
 
-📝 License
+License
 
-Specify your license, e.g.:
+Specify your license here (MIT, CC-BY-4.0, etc.)
 
-MIT License
+Contact
 
-Creative Commons Attribution 4.0
+For scientific questions:
+Wojciech Szewczyk — Wojciech.SZEWCZYK@ec.europa.eu
 
-“Available for research purposes only”
-
-🤝 Contact
-
-For questions related to the analysis, methodology, or data:
-
-📧 Wojciech Szewczyk
-Wojciech.SZEWCZYK@ec.europa.eu
-
-For repository or code-related issues:
-
-📧 Emanuele Massaro
-(Insert preferred academic or personal email if desired)
-
-✔️ Done!
-
-Let me know if you'd like:
-
-A shorter README for GitHub
-
-A more technical one for reproducibility packages
-
-A badge layout (Zenodo DOI, binder, etc.)
+For code or repository issues:
+Emanuele Massaro
