@@ -1,95 +1,97 @@
-Spatial role of land cover on West Nile virus disease in Europe
+# Spatial role of land cover on West Nile virus disease in Europe
 
 This repository contains the analysis code, data, and figures associated with the manuscript:
 
-Spatial role of land cover on West Nile virus disease in Europe
+**Spatial role of land cover on West Nile virus disease in Europe**
 
-Authors:
-Nicola Rizzetti, Angela Fanelli, Wojciech Szewczyk*, Alessandro Cescatti, Juan Carlos Ciscar, Grégoire Dubois, Dolores Ibarreta, Jordi Figuerola, and Emanuele Massaro
+**Authors:**  
+Nicola Riccetti, Angela Fanelli, Wojciech Szewczyk\*, Alessandro Cescatti, Juan Carlos Ciscar, Grégoire Dubois, Dolores Ibarreta, Jordi Figuerola, and Emanuele Massaro
 
-Affiliations:
-a European Commission, Joint Research Centre (JRC), Via E. Fermi 2749, 21027 Ispra (VA), Italy
-b European Commission, Joint Research Centre (JRC), C. Inca Garcilaso 3, 41092 Sevilla, Spain
-c Estación Biológica de Doñana, Consejo Superior de Investigaciones Científicas (CSIC), Avda. Américo Vespucio 26, 41092 Sevilla, Spain
+**Affiliations:**  
+a European Commission, Joint Research Centre (JRC), Via E. Fermi 2749, 21027 Ispra (VA), Italy  
+b European Commission, Joint Research Centre (JRC), C. Inca Garcilaso 3, 41092 Sevilla, Spain  
+c Estación Biológica de Doñana, Consejo Superior de Investigaciones Científicas (CSIC), Avda. Américo Vespucio 26, 41092 Sevilla, Spain  
 d Centro de Investigación Biomédica en Red Epidemiología y Salud Pública (CIBERESP), Avda. Monforte de Lemos 3–5, 28029 Madrid, Spain
 
-Corresponding author:
-Wojciech Szewczyk — Wojciech.SZEWCZYK@ec.europa.eu
+**Corresponding author:**  
+*Wojciech Szewczyk* — Wojciech.SZEWCZYK@ec.europa.eu
 
-Overview
+---
 
-This repository contains all materials needed to reproduce the spatial statistical analyses and figures for the study Spatial role of land cover on West Nile virus disease in Europe.
+## Overview
 
-The analysis explores the relationship between land cover characteristics and West Nile virus (WNV) incidence across Europe, using spatial econometric models, Geographically Weighted Regression (GWR), and a suite of sensitivity analyses.
+This repository contains all materials needed to reproduce the spatial statistical analyses and figures for the study *Spatial role of land cover on West Nile virus disease in Europe*.  
+It includes the full codebase, processed datasets, model outputs, and figures for both the main manuscript and the Supplementary Information (SI).
 
-Repository Structure
+---
+
+## Repository Structure
+
+```
 ├── Codes/
-│   ├── modelsALL.ipynb
-│   └── sensitivity.ipynb
+│   ├── modelsALL.ipynb        # Main analysis and manuscript figures
+│   └── sensitivity.ipynb      # Sensitivity analyses and diagnostics
 │
 ├── Data/
-│   ├── input_data/
-│   ├── processed_data/
-│   └── model_outputs/
+│   ├── input_data/            # Raw spatial and epidemiological data
+│   ├── processed_data/        # Harmonized and aggregated datasets
+│   └── model_outputs/         # Outputs from models and diagnostics
 │
 └── Figures/
-    ├── Main/
-    └── Supplementary/
+    ├── Main/                  # Figures included in the manuscript
+    └── Supplementary/         # Figures for the SI (diagnostics, heatmaps, etc.)
+```
 
-Contents
-1. Codes/
-modelsALL.ipynb
+---
 
-Main workflow for:
+## Contents
 
-data preparation
+### 1. Codes/
 
-construction of spatial weights
+#### `modelsALL.ipynb`
+Main workflow including:
+- Data preparation and standardization  
+- Construction of spatial weights matrices  
+- OLS regression and Moran’s I diagnostics  
+- Geographically Weighted Regression (GWR)  
+- Generation of main manuscript figures  
 
-OLS and Moran’s I diagnostics
+#### `sensitivity.ipynb`
+Includes:
+- Distance-band threshold sensitivity (100–200 km)  
+- Multicollinearity diagnostics (correlation matrix, VIF)  
+- Robustness tests for covariate selection  
+- Supplementary figures and tables  
 
-GWR modelling
+---
 
-generation of figures for the manuscript
+### 2. Data/
 
-sensitivity.ipynb
+Includes all datasets required to run the models:
 
-Sensitivity analyses:
+- `input_data/`: raw spatial layers and source data  
+- `processed_data/`: cleaned and aligned NUTS-level datasets  
+- `model_outputs/`: OLS, Moran’s I, GWR results, sensitivity results  
 
-distance-band threshold selection
+> Some datasets may not be publicly distributed due to licensing restrictions.  
+> When this occurs, placeholder files and instructions are provided.
 
-multicollinearity diagnostics (correlation matrix, VIF)
+---
 
-robustness checks for covariate selection
+### 3. Figures/
 
-supplementary figures and tables
+- **Main/**: All figures used in the primary manuscript  
+- **Supplementary/**: Heatmaps, residual diagnostics, sensitivity charts, and additional spatial visualizations
 
-2. Data/
+---
 
-Contains all datasets used in the analysis:
+## Requirements
 
-input_data/: raw spatial and tabular data
-
-processed_data/: harmonized NUTS-level inputs
-
-model_outputs/: OLS, GWR, and sensitivity results
-
-Note: some datasets may not be openly shared due to licensing restrictions. In such cases, placeholders or instructions are provided.
-
-3. Figures/
-
-All figures produced by the analysis.
-
-Main/: figures included in the manuscript
-
-Supplementary/: figures for the SI (diagnostics, sensitivity, heatmaps, etc.)
-
-Requirements
-
-Python ≥ 3.9
+Python ≥ 3.9  
 Recommended environment: Conda / Mamba
 
-Key libraries
+### Required libraries
+```
 geopandas
 pandas
 numpy
@@ -100,44 +102,53 @@ esda
 mgwr
 statsmodels
 scikit-learn
+```
 
+Install via:
 
-Install with:
-
+```bash
 pip install -r requirements.txt
+```
 
-Running the Analysis
+---
 
-Clone the repository:
+## Running the Analysis
 
+1. Clone the repository:
+
+```bash
 git clone https://github.com/<your-repo>.git
 cd <your-repo>
+```
 
+2. Place all required data files in the `Data/` directory.
 
-Ensure all data are placed in Data/.
+3. Run the notebooks in sequence:
+   - `Codes/modelsALL.ipynb`
+   - `Codes/sensitivity.ipynb`
 
-Run notebooks from the Codes/ folder:
+4. Figures will be automatically saved to the `Figures/` folder.
 
-modelsALL.ipynb
+---
 
-sensitivity.ipynb
+## Citation
 
-Figures will be exported automatically to the Figures/ folder.
-
-Citation
-
-Rizzetti, N., Fanelli, A., Szewczyk, W.*, Cescatti, A., Ciscar, J.C., Dubois, G., Ibarreta, D., Figuerola, J., & Massaro, E.
-Spatial role of land cover on West Nile virus disease in Europe.
+Rizzetti, N., Fanelli, A., Szewczyk, W.\*, Cescatti, A., Ciscar, J.C., Dubois, G., Ibarreta, D., Figuerola, J., & Massaro, E.  
+*Spatial role of land cover on West Nile virus disease in Europe.*  
 European Commission, Joint Research Centre (JRC), 2024.
 
-License
+---
 
-Specify your license here (MIT, CC-BY-4.0, etc.)
+## License
 
-Contact
+Please specify your license here (MIT, CC-BY-4.0, etc.)
 
-For scientific questions:
-Wojciech Szewczyk — Wojciech.SZEWCZYK@ec.europa.eu
+---
 
-For code or repository issues:
-Emanuele Massaro
+## Contact
+
+For scientific questions:  
+**Wojciech Szewczyk** — Wojciech.SZEWCZYK@ec.europa.eu  
+
+For code-related queries:  
+**Emanuele Massaro**
