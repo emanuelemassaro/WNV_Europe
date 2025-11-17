@@ -139,12 +139,6 @@ European Commission, Joint Research Centre (JRC), 2024.
 
 ---
 
-## License
-
-Please specify your license here (MIT, CC-BY-4.0, etc.)
-
----
-
 ## Contact
 
 For scientific questions:  
@@ -152,3 +146,4 @@ For scientific questions:
 
 For code-related queries:  
 **Emanuele Massaro**
+
