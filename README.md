@@ -61,7 +61,11 @@ Includes:
 - Distance-band threshold sensitivity (100–200 km)  
 - Multicollinearity diagnostics (correlation matrix, VIF)  
 - Robustness tests for covariate selection  
-- Supplementary figures and tables  
+- Supplementary figures and tables
+
+#### `APES_clima.R`  `APES_Base 1.R`
+Includes:
+- R codes to aggregated the climatic, land use and infection data at NUTS 3 level
 
 ---
 
@@ -146,4 +150,5 @@ For scientific questions:
 
 For code-related queries:  
 **Emanuele Massaro**
+
 
