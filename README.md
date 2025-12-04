@@ -52,6 +52,7 @@ The notebook:
 The resulting files preserve only high-level statistical patterns and are safe to publish.  
 For access to the real data or more information, please contact **ECDC**.
 
+**All the results presented in modelsALL.ipynb are based on the ORIGINAL DATA**
 
 ---
 
@@ -161,6 +162,7 @@ For scientific questions:
 
 For code-related queries:  
 **Emanuele Massaro**
+
 
 
 
