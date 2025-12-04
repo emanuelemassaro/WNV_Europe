@@ -41,6 +41,17 @@ It includes the full codebase, processed datasets, model outputs, and figures fo
     ├── Main/                  # Figures included in the manuscript
     └── Supplementary/         # Figures for the SI (diagnostics, heatmaps, etc.)
 ```
+## Note on `modifyIncidenceData.ipynb` (Data Privacy)
+
+The notebook `modifyIncidenceData.ipynb` anonymizes the original **Incidence** values from ECDC (Tessy) to comply with the data-sharing agreement, which does not allow publication of case-based data.
+
+The notebook:
+- replaces the original incidence values with **synthetic, privacy-safe values**,  
+- applies **local reshuffling** between nearby rows to remove any link to the original data.
+
+The resulting files preserve only high-level statistical patterns and are safe to publish.  
+For access to the real data or more information, please contact **ECDC**.
+
 
 ---
 
@@ -150,5 +161,6 @@ For scientific questions:
 
 For code-related queries:  
 **Emanuele Massaro**
+
 
 
