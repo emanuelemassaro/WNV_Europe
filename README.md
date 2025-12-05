@@ -13,8 +13,7 @@ b European Commission, Joint Research Centre (JRC), C. Inca Garcilaso 3, 41092 S
 c Estación Biológica de Doñana, Consejo Superior de Investigaciones Científicas (CSIC), Avda. Américo Vespucio 26, 41092 Sevilla, Spain  
 d Centro de Investigación Biomédica en Red Epidemiología y Salud Pública (CIBERESP), Avda. Monforte de Lemos 3–5, 28029 Madrid, Spain
 
-**Corresponding author:**  
-*Wojciech Szewczyk* — Wojciech.SZEWCZYK@ec.europa.eu
+
 
 ---
 
@@ -155,13 +154,6 @@ European Commission, Joint Research Centre (JRC), 2024.
 
 ---
 
-## Contact
-
-For scientific questions:  
-**Wojciech Szewczyk** — Wojciech.SZEWCZYK@ec.europa.eu  
-
-For code-related queries:  
-**Emanuele Massaro**
 
 
 
